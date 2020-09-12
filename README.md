@@ -15,24 +15,29 @@ while True:
     print("*" * 30)
     n = input("Enter A Number Please > ")
 
-# stopping error to exit the programe
+# stopping error to exit the program
     try:
-        n == int(n)
+        str(n) == int(n)
     except Exception as err_pp:
         print(f"Error = ", err_pp, "\n")
         continue
 
     n = int(n)
-    b = input("Select Your preference & Enter [ 0 = True | 1 = False ] > ")
+    if n >= 10:
+        print(" please enter less than 10 ")
+        continue
 
+    b = input("Select Your preference & Enter [ 1 = True | 0 = False ] > ")
+    b1 = int(b)
     try:
         b == int(b)
     except Exception as err_pp:
         print(f"Error = ", err_pp, "\n")
         continue
+    b_b = bool(b1)
 
-    if int(b) == 0:
-        print(f" Your Number is '{n}' and its 'True'")
+    if b_b == True:
+        print(f" Your Number is '{n}' and its '{b_b}'")
 
         while num01 != n + 1:
             print(num01, "*" * num01)
@@ -41,8 +46,8 @@ while True:
             print("Congratulations... Exercise is OVER ")
             break
 
-    elif int(b) == 1:
-        print(f" Your Number is '{n}'  and its 'False'")
+    elif b_b == False:
+        print(f" Your Number is '{n}'  and its '{b_b}'")
 
         while n != 0:
             print(n, "*" * n)
